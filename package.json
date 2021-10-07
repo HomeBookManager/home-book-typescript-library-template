@@ -1,0 +1,69 @@
+{
+  "name": "home-book-manager-typescript-library-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "typings": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "npx rimraf dist && tsc -p .",
+    "eslint-ts": "eslint . --ext .ts --fix --max-warnings=0",
+    "prepare": "husky install",
+    "prettier:check": "npx prettier --check .",
+    "prettier:write": "npx prettier --write .",
+    "test": "jest --watchAll",
+    "test:check": "jest --watchAll=false --passWithNoTests"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "branch-name-lint": "^2.1.1",
+    "eslint": "^7.32.0",
+    "husky": "^7.0.2",
+    "jest": "^27.2.4",
+    "lodash": "^4.17.21",
+    "prettier": "^2.4.1",
+    "ts-jest": "^27.0.5",
+    "typescript": "^4.4.3"
+  },
+  "branchNameLinter": {
+    "prefixes": [
+      "feature",
+      "bugfix",
+      "hotfix"
+    ],
+    "suggestions": {
+      "features": "feature",
+      "feat": "feature",
+      "fix": "hotfix",
+      "releases": "release"
+    },
+    "banned": [
+      "wip"
+    ],
+    "skip": [
+      "skip-ci"
+    ],
+    "disallowed": [
+      "master",
+      "develop",
+      "staging"
+    ],
+    "regex": "^((bugfix|feature|hotfix)/LW-([0-9]{4})((-([a-z]{1,})){1,})$)",
+    "regexOptions": "i",
+    "separator": "/",
+    "msgBranchBanned": "Branches with the name \"%s\" are not allowed.",
+    "msgBranchDisallowed": "Pushing to \"%s\" is not allowed, use git-flow.",
+    "msgPrefixNotAllowed": "Branch prefix \"%s\" is not allowed.",
+    "msgPrefixSuggestion": "Instead of \"%s\" try \"%s\".",
+    "msgseparatorRequired": "Branch \"%s\" must contain a separator \"%s\".",
+    "msgDoesNotMatchRegex": "Branch \"%s\" does not match the allowed pattern: \"%s\""
+  }
+}

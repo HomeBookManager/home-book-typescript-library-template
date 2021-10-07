@@ -1,0 +1,7 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npx branch-name-lint
+npm run eslint-ts
+npm run prettier:check
+npm run test:check
